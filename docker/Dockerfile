@@ -1,0 +1,11 @@
+FROM alpine:3.14
+
+ENV ROCKET_ADDRESS=0.0.0.0
+ENV ROCKET_PORT=6666
+
+WORKDIR /app
+
+ARG RUST_FILE
+COPY ${RUST_FILE} /app/app
+
+CMD ["/app/app"]
